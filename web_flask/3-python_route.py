@@ -8,6 +8,7 @@ from markupsafe import escape
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route("/")
 def say_hello():
     """Greetings among men of like minds"""
@@ -31,6 +32,7 @@ def greetC(text):
         st = st.replace('_', ' ')
 
     return f"C {st}"
+
 
 @app.route("/python")
 @app.route("/python/<text>")

@@ -9,6 +9,7 @@ from flask import render_template
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route("/")
 def say_hello():
     """Greetings among men of like minds"""
@@ -23,7 +24,6 @@ def greet():
     return "HBNB"
 
 
-
 @app.route("/c/<text>")
 def greetC(text):
     """Handles url parameters"""
@@ -35,14 +35,12 @@ def greetC(text):
     return f"C {st}"
 
 
-
 @app.route("/python")
 @app.route("/python/<text>")
 def greetP(text='is cool'):
     """Handles url parameters"""
 
     return f"Python {escape(text).replace('_', ' ')}"
-
 
 
 @app.route("/number/<int:n>")
@@ -59,12 +57,12 @@ def templating(n):
     return render_template('5-number.html', number=n)
 
 
-
 @app.route("/number_odd_or_even/<int:n>")
 def conditions(n):
     """Renders a template that has conditions"""
 
     return render_template('6-number_odd_or_even.html', number=n)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

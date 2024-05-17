@@ -8,6 +8,7 @@ from markupsafe import escape
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route("/")
 def say_hello():
     """Greetings among men of like minds"""
@@ -22,7 +23,6 @@ def greet():
     return "HBNB"
 
 
-
 @app.route("/c/<text>")
 def greetC(text):
     """Handles url parameters"""
@@ -34,7 +34,6 @@ def greetC(text):
     return f"C {st}"
 
 
-
 @app.route("/python")
 @app.route("/python/<text>")
 def greetP(text='is cool'):
@@ -43,13 +42,11 @@ def greetP(text='is cool'):
     return f"Python {escape(text).replace('_', ' ')}"
 
 
-
 @app.route("/number/<int:n>")
 def number(n):
     """Receives n only if it is an integer"""
 
     return f"{escape(n)} is an integer"
-
 
 
 if __name__ == "__main__":
