@@ -2,14 +2,16 @@
 """This script starts a publicly visible Flask server
 on port 5000"""
 
+
 from flask import Flask
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route("/")
 def say_hello():
-    ""'Greetings among men of like minds"""
+    """Greetings among men of like minds"""
 
     return "Hello HBNB!"
 
