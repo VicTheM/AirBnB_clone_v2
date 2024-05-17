@@ -46,7 +46,7 @@ def greetP(text='is cool'):
 def number(n):
     """Receives n only if it is an integer"""
 
-    return f"{escape(n)} is an integer"
+    return f"{escape(n)} is a number"
 
 
 if __name__ == "__main__":
